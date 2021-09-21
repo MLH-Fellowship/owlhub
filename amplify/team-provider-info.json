@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-owlhub-dev-15757-authRole",
+      "UnauthRoleArn": "arn:aws:iam::177622565656:role/amplify-owlhub-dev-15757-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::177622565656:role/amplify-owlhub-dev-15757-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-owlhub-dev-15757-deployment",
+      "UnauthRoleName": "amplify-owlhub-dev-15757-unauthRole",
+      "StackName": "amplify-owlhub-dev-15757",
+      "StackId": "arn:aws:cloudformation:us-east-1:177622565656:stack/amplify-owlhub-dev-15757/8fbb75b0-1adb-11ec-ae65-0ebac7a2c179",
+      "AmplifyAppId": "d3f1zzg18gke81"
+    },
+    "categories": {
+      "auth": {
+        "owlhubbf077154": {}
+      }
+    }
+  }
+}
