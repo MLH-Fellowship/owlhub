@@ -81,7 +81,7 @@ export default function Navbar() {
                 <MenuItem>Link 1</MenuItem>
                 <MenuItem>Link 2</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem><amplify-sign-out button-text="Sign Out"></amplify-sign-out></MenuItem>
               </MenuList>
             </Menu>
           </Flex>
