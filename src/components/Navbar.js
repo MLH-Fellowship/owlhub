@@ -52,7 +52,7 @@ export default function Navbar() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Image borderRadius="full" boxSize="80px" src={logo} alt="Logo" />
+              <Image borderRadius="full" boxSize="150px" src={logo} alt="Logo" />
             </Box>
             <HStack
               as={"nav"}

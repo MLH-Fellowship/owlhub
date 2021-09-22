@@ -7,14 +7,14 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { VStack } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import { Button, useColorModeValue } from "@chakra-ui/react";
 
 const initialState = { name: "", description: "" };
 
 export default function Todo() {
   const [formState, setFormState] = useState(initialState);
   const [todos, setTodos] = useState([]);
-
+  
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -47,19 +47,21 @@ export default function Todo() {
   return (
     <Container maxW="container.md">
       <VStack>
-        <h2>Owl Todos</h2>
+        <h2 style={{paddingTop:'15px'}}>&lt;hoot your code/&gt;</h2>
         <Input
+          bg={useColorModeValue("")}
           placeholder="Name"
           value={formState.name}
           onChange={(event) => setInput("name", event.target.value)}
         />
         <Input
+          bg={useColorModeValue("")}
           placeholder="Code"
           value={formState.description}
           onChange={(event) => setInput("description", event.target.value)}
         />
         <Button colorScheme="teal" onClick={addTodo}>
-          Make Magic
+          Hoot
         </Button>
       </VStack>
 
