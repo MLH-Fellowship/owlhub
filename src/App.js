@@ -7,6 +7,7 @@ import awsExports from "./aws-exports";
 import Todo from "./components/Todo";
 import { extendTheme } from "@chakra-ui/react"
 import "@fontsource/league-mono/400.css"
+import Navbar from "./components/Navbar";
 
 
 const theme = extendTheme({
@@ -22,6 +23,7 @@ const App = () => {
   
   return (
     <ChakraProvider theme={theme}>
+      <Navbar></Navbar>
       <Todo></Todo>
     </ChakraProvider>
   );
