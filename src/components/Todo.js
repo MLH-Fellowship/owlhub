@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
+import { Container } from "@chakra-ui/react";
 import { createTodo } from "../graphql/mutations";
 import { listTodos } from "../graphql/queries";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { VStack } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react"
 
 const initialState = { name: "", description: "" };
 
@@ -41,59 +45,36 @@ export default function Todo() {
     }
   }
   return (
-    <div style={styles.container}>
-      <h2>Owl Todos</h2>
-      <input
-        onChange={(event) => setInput("name", event.target.value)}
-        style={styles.input}
-        value={formState.name}
-        placeholder="Name"
-      />
-      <input
-        onChange={(event) => setInput("description", event.target.value)}
-        style={styles.input}
-        value={formState.description}
-        placeholder="Description"
-      />
-      <button style={styles.button} onClick={addTodo}>
-        Make Magic
-      </button>
+    <Container maxW="container.md">
+      <VStack>
+        <h2>Owl Todos</h2>
+        <Input
+          placeholder="Name"
+          value={formState.name}
+          onChange={(event) => setInput("name", event.target.value)}
+        />
+        <Input
+          placeholder="Code"
+          value={formState.description}
+          onChange={(event) => setInput("description", event.target.value)}
+        />
+        <Button colorScheme="teal" onClick={addTodo}>Make Magic</Button>
+      </VStack>
+
       {todos.map((todo, index) => (
         <div key={todo.id ? todo.id : index} style={styles.todo}>
           <p style={styles.todoName}>{todo.name}</p>
-          <SyntaxHighlighter language="javascript" style={docco}>
+          <SyntaxHighlighter language="javascript" style={dark}>
             {todo.description}
           </SyntaxHighlighter>
         </div>
       ))}
-    </div>
+    </Container>
   );
 }
 
 const styles = {
-  container: {
-    width: 400,
-    margin: "0 auto",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    padding: 20,
-  },
   todo: { marginBottom: 15 },
-  input: {
-    border: "none",
-    backgroundColor: "#ddd",
-    marginBottom: 10,
-    padding: 8,
-    fontSize: 18,
-  },
   todoName: { fontSize: 20, fontWeight: "bold" },
   todoDescription: { marginBottom: 0 },
-  button: {
-    backgroundColor: "black",
-    color: "white",
-    outline: "none",
-    fontSize: 18,
-    padding: "12px 0px",
-  },
 };
