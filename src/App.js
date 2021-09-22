@@ -1,9 +1,10 @@
 /* src/App.js */
 import React, { useEffect, useState } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
-import { withAuthenticator } from '@aws-amplify/ui-react'
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import awsExports from "./aws-exports";
 
 Amplify.configure(awsExports);
@@ -45,30 +46,32 @@ const App = () => {
   }
 
   return (
-    <div style={styles.container}>
-      <h2>Owl Todos</h2>
-      <input
-        onChange={(event) => setInput("name", event.target.value)}
-        style={styles.input}
-        value={formState.name}
-        placeholder="Name"
-      />
-      <input
-        onChange={(event) => setInput("description", event.target.value)}
-        style={styles.input}
-        value={formState.description}
-        placeholder="Description"
-      />
-      <button style={styles.button} onClick={addTodo}>
-        Make Magic
-      </button>
-      {todos.map((todo, index) => (
-        <div key={todo.id ? todo.id : index} style={styles.todo}>
-          <p style={styles.todoName}>{todo.name}</p>
-          <p style={styles.todoDescription}>{todo.description}</p>
-        </div>
-      ))}
-    </div>
+    <ChakraProvider>
+      <div style={styles.container}>
+        <h2>Owl Todos</h2>
+        <input
+          onChange={(event) => setInput("name", event.target.value)}
+          style={styles.input}
+          value={formState.name}
+          placeholder="Name"
+        />
+        <input
+          onChange={(event) => setInput("description", event.target.value)}
+          style={styles.input}
+          value={formState.description}
+          placeholder="Description"
+        />
+        <button style={styles.button} onClick={addTodo}>
+          Make Magic
+        </button>
+        {todos.map((todo, index) => (
+          <div key={todo.id ? todo.id : index} style={styles.todo}>
+            <p style={styles.todoName}>{todo.name}</p>
+            <p style={styles.todoDescription}>{todo.description}</p>
+          </div>
+        ))}
+      </div>{" "}
+    </ChakraProvider>
   );
 };
 
@@ -100,4 +103,4 @@ const styles = {
   },
 };
 
-export default withAuthenticator(App)
+export default withAuthenticator(App);
