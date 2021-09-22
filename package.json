@@ -4,13 +4,20 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.16",
+    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "^1.6.8",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@fontsource/league-mono": "^4.5.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "aws-amplify": "^4.2.10",
+    "framer-motion": "^4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-syntax-highlighter": "^15.4.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
