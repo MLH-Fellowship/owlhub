@@ -5,9 +5,11 @@ import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
 import { withAuthenticator } from '@aws-amplify/ui-react'
 import awsExports from "./aws-exports";
+import { ChakraProvider } from "@chakra-ui/react"
 
 Amplify.configure(awsExports);
 
+function App({ children }) {
 const initialState = { name: "", description: "" };
 
 const App = () => {
@@ -71,6 +73,8 @@ const App = () => {
     </div>
   );
 };
+return <ChakraProvider>{children}</ChakraProvider>
+}
 
 const styles = {
   container: {
