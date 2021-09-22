@@ -7,7 +7,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { VStack } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react"
+import { Button } from "@chakra-ui/react";
 
 const initialState = { name: "", description: "" };
 
@@ -58,7 +58,9 @@ export default function Todo() {
           value={formState.description}
           onChange={(event) => setInput("description", event.target.value)}
         />
-        <Button colorScheme="teal" onClick={addTodo}>Make Magic</Button>
+        <Button colorScheme="teal" onClick={addTodo}>
+          Make Magic
+        </Button>
       </VStack>
 
       {todos.map((todo, index) => (
@@ -76,5 +78,4 @@ export default function Todo() {
 const styles = {
   todo: { marginBottom: 15 },
   todoName: { fontSize: 20, fontWeight: "bold" },
-  todoDescription: { marginBottom: 0 },
 };
