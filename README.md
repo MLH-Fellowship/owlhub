@@ -1,10 +1,18 @@
-# Getting Started with Create React App
+# What is OwlHub?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A space for coders to meet :D
 
-## Available Scripts
+# How to use this project?
 
-In the project directory, you can run:
+## Clone project `git clone`
+Then `cd` into `owlhub`
+
+## Setup Amplify
+`npm install -g @aws-amplify/cli`
+
+`amplify configure`
+
+`amplify init`
 
 ### `npm start`
 
