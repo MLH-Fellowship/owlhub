@@ -23,7 +23,6 @@ const App = () => {
   
   return (
     <ChakraProvider theme={theme}>
-      <Navbar></Navbar>
       <Todo></Todo>
     </ChakraProvider>
   );

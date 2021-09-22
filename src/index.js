@@ -5,11 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
+import { extendTheme } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import "@fontsource/league-mono/400.css"
+import Navbar from "./components/Navbar";
 Amplify.configure(awsExports);
 
+
 ReactDOM.render(
+	
   <React.StrictMode>
-    <App />
+  <ChakraProvider>
+      <Navbar></Navbar>
+      <App />
+    </ChakraProvider>
+    
   </React.StrictMode>,
   document.getElementById("root")
 );
