@@ -4,8 +4,8 @@ import Amplify, { API, graphqlOperation } from "aws-amplify";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from "./graphql/queries";
 import { withAuthenticator } from '@aws-amplify/ui-react'
-
 import awsExports from "./aws-exports";
+
 Amplify.configure(awsExports);
 
 const initialState = { name: "", description: "" };
@@ -46,7 +46,7 @@ const App = () => {
 
   return (
     <div style={styles.container}>
-      <h2>Amplify Todos</h2>
+      <h2>Owl Todos</h2>
       <input
         onChange={(event) => setInput("name", event.target.value)}
         style={styles.input}
@@ -60,7 +60,7 @@ const App = () => {
         placeholder="Description"
       />
       <button style={styles.button} onClick={addTodo}>
-        Create Todo
+        Make Magic
       </button>
       {todos.map((todo, index) => (
         <div key={todo.id ? todo.id : index} style={styles.todo}>
