@@ -8,9 +8,9 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { VStack } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
 import { useCounter } from "@chakra-ui/counter"
-import { Button, useColorModeValue , IconButton} from "@chakra-ui/react";
 import {MoonIcon} from "@chakra-ui/icons";
-
+import { Textarea } from "@chakra-ui/react";
+import { Button, useColorModeValue } from "@chakra-ui/react";
 
 const initialState = { name: "", description: "" };
 
@@ -58,12 +58,14 @@ export default function Todo() {
       <VStack>
         <h2 style={{paddingTop:'15px'}}>&lt;hoot your code/&gt;</h2>
         <Input
+          style={{ width:"300px" }}
           bg={useColorModeValue("")}
           placeholder="Name"
           value={formState.name}
           onChange={(event) => setInput("name", event.target.value)}
         />
-        <Input
+        <Textarea
+          style={{ height:"100px", overflowWrap: "break-word", overflow: "auto" }}
           bg={useColorModeValue("")}
           placeholder="Code"
           value={formState.description}
