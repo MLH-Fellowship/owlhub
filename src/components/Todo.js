@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { Container } from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
-import { PostForm } from "./PostForm";
-import { Card } from "./Card";
+import  PostForm  from "./PostForm";
+import  Card from "./Card";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
