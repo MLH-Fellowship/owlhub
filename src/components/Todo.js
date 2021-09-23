@@ -82,7 +82,8 @@ export default function Todo() {
           <SyntaxHighlighter language="javascript" style={dark}>
             {todo.description}
           </SyntaxHighlighter>
-          <MoonIcon boxSize={6} style={{marginTop:'10px', marginLeft:'10px'}} color="red.450" />
+          <Button style={{marginTop:'10px', marginLeft:'10px'}}  colorScheme="teal" onClick={() => counter.increment()}><MoonIcon boxSize={5} color="red.450" style={{marginRight:'2px'}}/> {counter.value}</Button>
+          
         </div>
       ))}
     </Container>
