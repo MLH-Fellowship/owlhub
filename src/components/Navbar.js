@@ -78,8 +78,8 @@ export default function Navbar() {
                 />
               </MenuButton>
               <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>Settings</MenuItem>
                 <MenuDivider />
                 <MenuItem><amplify-sign-out button-text="Sign Out"></amplify-sign-out></MenuItem>
               </MenuList>

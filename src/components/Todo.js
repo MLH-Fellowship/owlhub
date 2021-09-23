@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { Container } from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
-import Card from "./Card";
-import PostForm from "./PostForm";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { VStack } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
+import { useCounter } from "@chakra-ui/counter"
+import {MoonIcon} from "@chakra-ui/icons";
+import { Textarea } from "@chakra-ui/react";
+import { Button, useColorModeValue } from "@chakra-ui/react";
+
+const initialState = { name: "", description: "" };
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);

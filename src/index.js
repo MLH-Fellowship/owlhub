@@ -1,18 +1,37 @@
-import React from "react";
+import React, {  } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
+import { extendTheme } from "@chakra-ui/react"
+import "@fontsource/league-mono/400.css"
+import Navbar from "./components/Navbar";
+
 Amplify.configure(awsExports);
 
+
+const theme = extendTheme({
+  fonts: {
+    heading: "League Mono",
+    body: "League Mono",
+  },
+})
+
 ReactDOM.render(
+	
   <React.StrictMode>
-    <App />
+  <ChakraProvider theme={theme}>
+      <Navbar></Navbar>
+      <App />
+    </ChakraProvider>
+    
   </React.StrictMode>,
   document.getElementById("root")
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

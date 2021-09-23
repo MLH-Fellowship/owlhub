@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "owlhub",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authowlhubbf077154",
+      "Outputs.UserPoolId"
+    ]
+  }
 }

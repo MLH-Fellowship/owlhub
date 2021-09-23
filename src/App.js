@@ -10,6 +10,7 @@ import "@fontsource/league-mono/400.css"
 import Navbar from "./components/Navbar";
 
 
+
 const theme = extendTheme({
   fonts: {
     heading: "League Mono",
@@ -23,10 +24,10 @@ const App = () => {
   
   return (
     <ChakraProvider theme={theme}>
-      <Navbar></Navbar>
       <Todo></Todo>
     </ChakraProvider>
   );
 };
 
 export default withAuthenticator(App);
+
