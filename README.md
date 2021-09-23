@@ -1,78 +1,86 @@
-# What is OwlHub?
+![polotno](https://user-images.githubusercontent.com/39209557/134441765-9f7511b3-1108-4ace-9838-3eda5b7a0d76.png)
 
-A space for coders to meet :D
+# Owlhub
 
-# How to use this project?
+> Space where coders come togethore
 
-## Clone project `git clone`
-Then `cd` into `owlhub`
+# Introduction
+
+You once wrote some terrible horrific code or some genius hacky function. Maybe you came across and interesting code snippet and you want to share that with world? Welcome to Owlhub where you can share code snippets with people from around the world.
+
+## 🎯 Features
+
+- Post code snippets
+- View private posts by unlocking via a key
+- View your profile
+- React and comment to posts
+
+## 📖 Documentation Details
+
+The react project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). One the backend we are using [`amplify`](https://aws.amazon.com/amplify/) infrastructure
+
+## ⚡ Installation
+
+### Install Dependencies
+
+```bash
+cd owlhub
+npm install
+```
+
+### Configure Amplify
 
 ## Setup Amplify
-`npm install -g @aws-amplify/cli`
 
-`amplify configure`
+Install amplify cli
 
-`amplify init`
+```bash
+npm install -g @aws-amplify/cli
+```
 
-### `npm start`
+Configure amplify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+amplify configure
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+When you come to this section enter then access key ID and the secret access key which we will provide to you
 
-### `npm test`
+```bash
+Enter the access key of the newly created user:
+? accessKeyId:  # YOUR_ACCESS_KEY_ID
+? secretAccessKey:  # YOUR_SECRET_ACCESS_KEY
+This would update/create the AWS Profile in your local machine
+? Profile Name:  # (default)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pull amplify back-end
 
-### `npm run build`
+```bash
+amplify pull
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Run Development Server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run dev
+```
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To learn more about React, take a look at the following resources:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://reactjs.org/) - React official docs
+- [Amplify](https://docs.amplify.aws/) - Amplify official docs
+- [React + Amplify Tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/react/) - Getting started with React and Amplify
 
-### Code Splitting
+## 👨‍💻 Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/fzchriha"><img src="https://avatars.githubusercontent.com/u/30349896?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Fatima Zahra Chriha</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/SarahCoded"><img src="https://avatars.githubusercontent.com/u/74359156?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Sarah Fluck</b></sub></a><br /></td>
+        <td align="center"><a href="https://github.com/Green-Ranger11"><img src="https://avatars.githubusercontent.com/u/39209557?v=4" width="100px;" alt="" style="border-radius:50%"/><br /><sub><b>Alesana Lealofi Eteuati Jr
+</b></sub></a><br /></td>
+  </tr>
+</table>
