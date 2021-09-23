@@ -26,7 +26,7 @@ export default function Todo() {
     <Container maxW="container.md">
       <PostForm newTodo={(newTodo) => setTodos([...todos, newTodo])}></PostForm>
 
-      {todos.map((todo, index) => (
+      {todos.slice(0).reverse().map((todo, index) => (
         <Card todo={todo} key={index}></Card>
       ))}
     </Container>
