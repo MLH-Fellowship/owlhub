@@ -1,5 +1,17 @@
 ![polotno](https://user-images.githubusercontent.com/39209557/134441765-9f7511b3-1108-4ace-9838-3eda5b7a0d76.png)
 
+<a href="#">
+<img alt="AWS-AMPLIFY" src="https://img.shields.io/badge/Amplify-Amplify?&style=for-the-badge&logo=AWS-Amplify&logoColor=ffffff&color=FF9900"/>
+<img alt="React" src="https://img.shields.io/badge/React-React?&style=for-the-badge&logo=react&logoColor=000&color=61DAFB"/>
+<img alt="JavaScript" src="https://img.shields.io/badge/Javascript-Javascript?&style=for-the-badge&logo=javascript&logoColor=fff&color=F7DF1E"/>
+<img alt="NodeJS" src="https://img.shields.io/badge/Node.JS-339933?&style=for-the-badge&logo=node.js&logoColor=fff&color=339933"/>
+<img alt="NPM" src="https://img.shields.io/badge/npm-npm?&style=for-the-badge&logo=npm&logoColor=fff&color=CB3837"/>
+<img alt="Github" src="https://img.shields.io/badge/Github-Github?&style=for-the-badge&logo=github&logoColor=fff&color=181717"/>
+<img alt="GraphQL" src="https://img.shields.io/badge/GraphQL-GraphQL?&style=for-the-badge&logo=GraphQL&logoColor=ffffff&color=E10098"/>
+<img alt="Markdown" src="https://img.shields.io/badge/Markdown-000000?&style=for-the-badge&logo=Markdown&logoColor=fff&color=000000"/>   
+</a>
+<img alt="MIT" src="https://img.shields.io/apm/l/VIM-MODE"/>
+
 # Owlhub
 
 > Space where coders come togethore
