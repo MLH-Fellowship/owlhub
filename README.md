@@ -14,7 +14,7 @@
 
 # Owlhub
 
-> Space where coders come togethore
+> Space where coders come together
 
 # Introduction
 
