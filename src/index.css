@@ -12,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Customize amplify colors*/
+:root {
+  --amplify-primary-color: #319795;
+  --amplify-primary-tint: #38B2AC;
+  --amplify-primary-shade: #4FD1C5;
+}

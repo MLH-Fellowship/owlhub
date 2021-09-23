@@ -7,6 +7,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { VStack } from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
+import { useCounter } from "@chakra-ui/counter"
+import {MoonIcon} from "@chakra-ui/icons";
 import { Textarea } from "@chakra-ui/react";
 import { Button, useColorModeValue } from "@chakra-ui/react";
 
@@ -45,6 +47,12 @@ export default function Todo() {
       console.log("error creating todo:", err);
     }
   }
+  const counter = useCounter({
+    max: 10,
+    min: 0,
+    step: 1,
+  })
+ 
   return (
     <Container maxW="container.md">
       <VStack>
@@ -74,6 +82,8 @@ export default function Todo() {
           <SyntaxHighlighter language="javascript" style={dark}>
             {todo.description}
           </SyntaxHighlighter>
+          <Button style={{marginTop:'10px', marginLeft:'10px'}}  colorScheme="teal" onClick={() => counter.increment()}><MoonIcon boxSize={5} color="red.450" style={{marginRight:'2px'}}/> {counter.value}</Button>
+          
         </div>
       ))}
     </Container>

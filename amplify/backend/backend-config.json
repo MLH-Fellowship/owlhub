@@ -6,10 +6,9 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 14,
-              "description": ""
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authowlhubbf077154"
             }
           },
           "additionalAuthenticationProviders": []
@@ -18,7 +17,7 @@
     }
   },
   "auth": {
-    "owlhub9e096909": {
+    "owlhubbf077154": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -40,6 +39,12 @@
           "EMAIL"
         ]
       }
+    }
+  },
+  "storage": {
+    "owlMedia": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
