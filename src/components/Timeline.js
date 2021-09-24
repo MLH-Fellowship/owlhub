@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { Container, Box, Icon, Center } from "@chakra-ui/react";
-import { listTodos } from "../graphql/queries";
+import { listHoots } from "../graphql/queries";
 import { Placeholder } from "./Placeholder";
 import { List } from "./List";
 import { ListItem } from "./ListItem";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Modal from "./Modal";
 
-export default function Todo() {
-  const [todos, setTodos] = useState([]);
+export default function Timeline() {
+  const [hoots, setHoots] = useState([]);
 
   useEffect(() => {
-    fetchTodos();
+    fetchHoots();
   }, []);
 
-  async function fetchTodos() {
+  async function fetchHoots() {
     try {
-      const todoData = await API.graphql(graphqlOperation(listTodos));
-      const todos = todoData.data.listTodos.items;
-      setTodos(todos);
+      const hootData = await API.graphql(graphqlOperation(listHoots));
+      const hoots = hootData.data.listHoots.items;
+      setHoots(hoots);
     } catch (err) {
       console.log(err);
     }
@@ -28,7 +28,7 @@ export default function Todo() {
   return (
     <Container maxW="container.lg">
       <Center paddingTop="5">
-        <Modal newTodo={(newTodo) => setTodos([...todos, newTodo])}></Modal>
+        <Modal newHoot={(newHoot) => setHoots([...hoots, newHoot])}></Modal>
       </Center>
       <Box as="section">
         <Box
@@ -40,17 +40,18 @@ export default function Todo() {
           }}
         >
           <List spacing="12">
-            {todos
+            {hoots
               .slice(0)
               .reverse()
-              .map((todo, index) => (
+              .map((hoot, index) => (
                 <ListItem
-                  title={todo.name}
-                  subTitle={todo.description}
+                  title={hoot.name}
+                  subTitle={hoot.description}
+                  createdAt={hoot.createdAt}
                   key={index}
                   icon={<Icon as={HamburgerIcon} boxSize="6" />}
                 >
-                  <Placeholder todo={todo} />
+                  <Placeholder hoot={hoot} />
                 </ListItem>
               ))}
           </List>

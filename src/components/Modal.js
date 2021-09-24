@@ -14,7 +14,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { createTodo } from "../graphql/mutations";
+import { createHoot } from "../graphql/mutations";
 import { API, graphqlOperation } from "aws-amplify";
 
 const initialState = { name: "", description: "", code: "" };
@@ -27,15 +27,15 @@ export default function BasicUsage(props) {
     setFormState({ ...formState, [key]: value });
   }
 
-  async function addTodo() {
+  async function addHoot() {
     try {
       if (!formState.name || !formState.description || !formState.code) return;
-      const todo = { ...formState };
-      props.newTodo(todo);
+      const hoot = { ...formState };
+      props.newHoot(hoot);
       setFormState(initialState);
-      await API.graphql(graphqlOperation(createTodo, { input: todo }));
+      await API.graphql(graphqlOperation(createHoot, { input: hoot }));
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log("error creating hoot:", err);
     }
   }
 
@@ -81,7 +81,7 @@ export default function BasicUsage(props) {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="teal" mr={3} onClick={addTodo}>
+            <Button colorScheme="teal" mr={3} onClick={addHoot}>
               Hoot
             </Button>
             <Button colorScheme="blue" onClick={onClose}>
