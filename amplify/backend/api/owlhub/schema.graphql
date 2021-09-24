@@ -3,4 +3,5 @@ type Hoot @model {
   name: String!
   description: String
   code: String!
+  creator: String!
 }

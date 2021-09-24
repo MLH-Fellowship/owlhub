@@ -11,7 +11,6 @@ Amplify.configure(awsExports);
 const App = () => {
   return (
     <>
-      <Navbar></Navbar>
       <Timeline></Timeline>
     </>
   );
