@@ -1,6 +1,6 @@
-type Todo @model {
+type Hoot @model {
   id: ID!
   name: String!
   description: String
-  image: String
+  code: String!
 }

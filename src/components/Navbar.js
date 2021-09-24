@@ -15,8 +15,9 @@ import {
   useColorModeValue,
   Stack,
   Image,
+  useColorMode,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, MoonIcon } from "@chakra-ui/icons";
 import logo from "../logo.png"; // relative path to image
 
 const Links = ["Owlhub"];
@@ -37,6 +38,7 @@ const NavLink = ({ children }) => (
 );
 
 export default function Navbar() {
+  const { toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -52,7 +54,12 @@ export default function Navbar() {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>
-              <Image borderRadius="full" boxSize="150px" src={logo} alt="Logo" />
+              <Image
+                borderRadius="full"
+                boxSize="150px"
+                src={logo}
+                alt="Logo"
+              />
             </Box>
             <HStack
               as={"nav"}
@@ -73,15 +80,20 @@ export default function Navbar() {
                 cursor={"pointer"}
                 minW={0}
               >
-                <Avatar
-                  size={"sm"}
-                />
+                <Avatar size={"sm"} />
               </MenuButton>
               <MenuList>
                 <MenuItem>Profile</MenuItem>
+                <MenuItem>
+                  <Button onClick={toggleColorMode}>
+                    <MoonIcon boxSize={5} />
+                  </Button>
+                </MenuItem>
                 <MenuItem>Settings</MenuItem>
                 <MenuDivider />
-                <MenuItem><amplify-sign-out button-text="Sign Out"></amplify-sign-out></MenuItem>
+                <MenuItem>
+                  <amplify-sign-out button-text="Sign Out"></amplify-sign-out>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Flex>
