@@ -4,8 +4,6 @@ import {
   Container,
   Box,
   Icon,
-  VStack,
-  Button,
 } from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
 import { Placeholder } from "./Placeholder";
@@ -13,8 +11,6 @@ import { List } from "./List";
 import { ListItem } from "./ListItem";
 import {
   HamburgerIcon,
-  TriangleUpIcon,
-  TriangleDownIcon,
 } from "@chakra-ui/icons";
 import Modal from "./Modal"
 
