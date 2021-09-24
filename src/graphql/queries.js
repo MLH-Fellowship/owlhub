@@ -8,6 +8,7 @@ export const getHoot = /* GraphQL */ `
       name
       description
       code
+      creator
       createdAt
       updatedAt
     }
@@ -25,6 +26,7 @@ export const listHoots = /* GraphQL */ `
         name
         description
         code
+        creator
         createdAt
         updatedAt
       }
