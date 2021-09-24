@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import { Container, Box, Icon, VStack, Button } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Icon,
+  VStack,
+  Button,
+} from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
-import PostForm from "./PostForm";
 import { Placeholder } from "./Placeholder";
 import { List } from "./List";
 import { ListItem } from "./ListItem";
-import { HamburgerIcon, TriangleUpIcon, TriangleDownIcon } from "@chakra-ui/icons";
+import {
+  HamburgerIcon,
+  TriangleUpIcon,
+  TriangleDownIcon,
+} from "@chakra-ui/icons";
+import Modal from "./Modal"
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
@@ -27,7 +37,7 @@ export default function Todo() {
 
   return (
     <Container maxW="container.lg">
-      <PostForm newTodo={(newTodo) => setTodos([...todos, newTodo])}></PostForm>
+      <Modal newTodo={(newTodo) => setTodos([...todos, newTodo])}></Modal>
       <Box as="section">
         <Box
           maxW="2xl"
@@ -49,18 +59,14 @@ export default function Todo() {
                 >
                   <Placeholder todo={todo} key={index} />
                   <VStack>
-                    <Button
-                      colorScheme="teal"
-                    >
+                    <Button colorScheme="teal">
                       <TriangleUpIcon
                         boxSize={3}
                         color="red.450"
                         style={{ marginRight: "2px" }}
                       />
                     </Button>
-                    <Button
-                      colorScheme="teal"
-                    >
+                    <Button colorScheme="teal">
                       <TriangleDownIcon
                         boxSize={3}
                         color="red.450"

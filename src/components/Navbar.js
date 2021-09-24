@@ -38,7 +38,7 @@ const NavLink = ({ children }) => (
 );
 
 export default function Navbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -73,9 +73,6 @@ export default function Navbar() {
           </HStack>
           <Flex alignItems={"center"}>
             <Menu>
-              <Button style={{ marginRight: "10px" }} onClick={toggleColorMode}>
-                <MoonIcon boxSize={5} />
-              </Button>
               <MenuButton
                 as={Button}
                 rounded={"full"}
@@ -87,6 +84,11 @@ export default function Navbar() {
               </MenuButton>
               <MenuList>
                 <MenuItem>Profile</MenuItem>
+                <MenuItem>
+                  <Button onClick={toggleColorMode}>
+                    <MoonIcon boxSize={5} />
+                  </Button>
+                </MenuItem>
                 <MenuItem>Settings</MenuItem>
                 <MenuDivider />
                 <MenuItem>

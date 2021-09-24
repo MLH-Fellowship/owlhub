@@ -5,13 +5,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "@fontsource/league-mono/400.css";
-import Navbar from "./components/Navbar";
 import theme from "./theme"
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <Navbar></Navbar>
       <App />
     </ChakraProvider>
   </React.StrictMode>,
