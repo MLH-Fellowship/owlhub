@@ -16,8 +16,9 @@ import {
 import { useState } from "react";
 import { createHoot } from "../graphql/mutations";
 import { API, graphqlOperation } from "aws-amplify";
+import { Auth } from "aws-amplify";
 
-const initialState = { name: "", description: "", code: "" };
+const initialState = { name: "", description: "", code: "", creator: "" };
 
 export default function BasicUsage(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,11 +32,14 @@ export default function BasicUsage(props) {
     try {
       if (!formState.name || !formState.description || !formState.code) return;
       const hoot = { ...formState };
-
+      const { username } = await Auth.currentAuthenticatedUser();
+      hoot.creator = username;
       await API.graphql(graphqlOperation(createHoot, { input: hoot }));
+
       hoot.createdAt = new Date();
       props.newHoot(hoot);
       setFormState(initialState);
+      onClose();
     } catch (err) {
       console.log("error creating hoot:", err);
     }
@@ -64,7 +68,9 @@ export default function BasicUsage(props) {
                 bg={useColorModeValue("")}
                 placeholder="Description"
                 value={formState.description}
-                onChange={(event) => setInput("description", event.target.value)}
+                onChange={(event) =>
+                  setInput("description", event.target.value)
+                }
               />
               <Textarea
                 style={{
@@ -75,9 +81,7 @@ export default function BasicUsage(props) {
                 bg={useColorModeValue("")}
                 placeholder="Code"
                 value={formState.code}
-                onChange={(event) =>
-                  setInput("code", event.target.value)
-                }
+                onChange={(event) => setInput("code", event.target.value)}
               />
             </VStack>
           </ModalBody>

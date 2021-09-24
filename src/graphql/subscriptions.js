@@ -8,6 +8,7 @@ export const onCreateHoot = /* GraphQL */ `
       name
       description
       code
+      creator
       createdAt
       updatedAt
     }
@@ -20,6 +21,7 @@ export const onUpdateHoot = /* GraphQL */ `
       name
       description
       code
+      creator
       createdAt
       updatedAt
     }
@@ -32,6 +34,7 @@ export const onDeleteHoot = /* GraphQL */ `
       name
       description
       code
+      creator
       createdAt
       updatedAt
     }

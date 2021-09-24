@@ -50,7 +50,7 @@ export default function Timeline() {
                   key={index}
                   icon={
                     <Avatar
-                      name="Anon Non"
+                      name={hoot.creator}
                     />
                   }
                 >
