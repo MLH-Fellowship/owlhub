@@ -4,12 +4,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Amplify from "aws-amplify";
-import awsExports from "./aws-exports";
 import "@fontsource/league-mono/400.css";
 import Navbar from "./components/Navbar";
 import theme from "./theme"
-Amplify.configure(awsExports);
 
 ReactDOM.render(
   <React.StrictMode>
