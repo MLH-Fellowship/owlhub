@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import {
-  Container,
-  Box,
-  Icon,
-} from "@chakra-ui/react";
+import { Container, Box, Icon, Center } from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
 import { Placeholder } from "./Placeholder";
 import { List } from "./List";
 import { ListItem } from "./ListItem";
-import {
-  HamburgerIcon,
-} from "@chakra-ui/icons";
-import Modal from "./Modal"
+import { HamburgerIcon } from "@chakra-ui/icons";
+import Modal from "./Modal";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
@@ -33,7 +27,9 @@ export default function Todo() {
 
   return (
     <Container maxW="container.lg">
-      <Modal newTodo={(newTodo) => setTodos([...todos, newTodo])}></Modal>
+      <Center paddingTop="5">
+        <Modal newTodo={(newTodo) => setTodos([...todos, newTodo])}></Modal>
+      </Center>
       <Box as="section">
         <Box
           maxW="2xl"

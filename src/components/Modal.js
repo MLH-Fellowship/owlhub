@@ -41,7 +41,7 @@ export default function BasicUsage(props) {
 
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Button onClick={onOpen}>Hoot!</Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
