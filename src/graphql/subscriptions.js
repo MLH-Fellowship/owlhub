@@ -7,7 +7,7 @@ export const onCreateTodo = /* GraphQL */ `
       id
       name
       description
-      image
+      code
       createdAt
       updatedAt
     }
@@ -19,7 +19,7 @@ export const onUpdateTodo = /* GraphQL */ `
       id
       name
       description
-      image
+      code
       createdAt
       updatedAt
     }
@@ -31,7 +31,7 @@ export const onDeleteTodo = /* GraphQL */ `
       id
       name
       description
-      image
+      code
       createdAt
       updatedAt
     }

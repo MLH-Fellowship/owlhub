@@ -21,7 +21,7 @@ export default function Todo() {
       const todos = todoData.data.listTodos.items;
       setTodos(todos);
     } catch (err) {
-      console.log("error fetching todos");
+      console.log(err);
     }
   }
 
@@ -46,10 +46,11 @@ export default function Todo() {
               .map((todo, index) => (
                 <ListItem
                   title={todo.name}
-                  subTitle="Posted by Mark Chandler"
+                  subTitle={todo.description}
+                  key={index}
                   icon={<Icon as={HamburgerIcon} boxSize="6" />}
                 >
-                  <Placeholder todo={todo} key={index} />
+                  <Placeholder todo={todo} />
                 </ListItem>
               ))}
           </List>

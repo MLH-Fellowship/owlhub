@@ -17,7 +17,7 @@ import { useState } from "react";
 import { createTodo } from "../graphql/mutations";
 import { API, graphqlOperation } from "aws-amplify";
 
-const initialState = { name: "", description: "" };
+const initialState = { name: "", description: "", code: "" };
 
 export default function BasicUsage(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,7 +29,7 @@ export default function BasicUsage(props) {
 
   async function addTodo() {
     try {
-      if (!formState.name || !formState.description) return;
+      if (!formState.name || !formState.description || !formState.code) return;
       const todo = { ...formState };
       props.newTodo(todo);
       setFormState(initialState);
@@ -57,6 +57,13 @@ export default function BasicUsage(props) {
                 value={formState.name}
                 onChange={(event) => setInput("name", event.target.value)}
               />
+              <Input
+                style={{ width: "300px" }}
+                bg={useColorModeValue("")}
+                placeholder="Description"
+                value={formState.description}
+                onChange={(event) => setInput("description", event.target.value)}
+              />
               <Textarea
                 style={{
                   height: "100px",
@@ -65,9 +72,9 @@ export default function BasicUsage(props) {
                 }}
                 bg={useColorModeValue("")}
                 placeholder="Code"
-                value={formState.description}
+                value={formState.code}
                 onChange={(event) =>
-                  setInput("description", event.target.value)
+                  setInput("code", event.target.value)
                 }
               />
             </VStack>
