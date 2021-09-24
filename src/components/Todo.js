@@ -58,22 +58,6 @@ export default function Todo() {
                   icon={<Icon as={HamburgerIcon} boxSize="6" />}
                 >
                   <Placeholder todo={todo} key={index} />
-                  <VStack>
-                    <Button colorScheme="teal">
-                      <TriangleUpIcon
-                        boxSize={3}
-                        color="red.450"
-                        style={{ marginRight: "2px" }}
-                      />
-                    </Button>
-                    <Button colorScheme="teal">
-                      <TriangleDownIcon
-                        boxSize={3}
-                        color="red.450"
-                        style={{ marginTop: "2px" }}
-                      />
-                    </Button>
-                  </VStack>
                 </ListItem>
               ))}
           </List>
