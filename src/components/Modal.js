@@ -46,11 +46,10 @@ export default function BasicUsage(props) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>&lt;hoot your code/&gt;</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack>
-              <h2 style={{ paddingTop: "15px" }}>&lt;hoot your code/&gt;</h2>
               <Input
                 style={{ width: "300px" }}
                 bg={useColorModeValue("")}
@@ -71,17 +70,16 @@ export default function BasicUsage(props) {
                   setInput("description", event.target.value)
                 }
               />
-              <Button colorScheme="teal" onClick={addTodo}>
-                Hoot
-              </Button>
             </VStack>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme="teal" mr={3} onClick={addTodo}>
+              Hoot
+            </Button>
+            <Button colorScheme="blue" onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
