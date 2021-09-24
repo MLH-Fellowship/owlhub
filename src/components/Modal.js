@@ -31,9 +31,11 @@ export default function BasicUsage(props) {
     try {
       if (!formState.name || !formState.description || !formState.code) return;
       const hoot = { ...formState };
+
+      await API.graphql(graphqlOperation(createHoot, { input: hoot }));
+      hoot.createdAt = new Date();
       props.newHoot(hoot);
       setFormState(initialState);
-      await API.graphql(graphqlOperation(createHoot, { input: hoot }));
     } catch (err) {
       console.log("error creating hoot:", err);
     }

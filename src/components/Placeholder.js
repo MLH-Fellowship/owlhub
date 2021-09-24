@@ -4,8 +4,8 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const Placeholder = (props) => (
   <Container>
-    <SyntaxHighlighter language="javascript" style={dark} width="full">
-      {props.hoot.code}
+    <SyntaxHighlighter language="javascript" style={dark} wrapLines ="true">
+      {props.code}
     </SyntaxHighlighter>
   </Container>
 );

@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import { Container, Box, Icon, Center } from "@chakra-ui/react";
+import { Container, Box, Avatar, Center } from "@chakra-ui/react";
 import { listHoots } from "../graphql/queries";
 import { Placeholder } from "./Placeholder";
 import { List } from "./List";
 import { ListItem } from "./ListItem";
-import { HamburgerIcon } from "@chakra-ui/icons";
 import Modal from "./Modal";
 
 export default function Timeline() {
@@ -49,9 +48,13 @@ export default function Timeline() {
                   subTitle={hoot.description}
                   createdAt={hoot.createdAt}
                   key={index}
-                  icon={<Icon as={HamburgerIcon} boxSize="6" />}
+                  icon={
+                    <Avatar
+                      name="Anon Non"
+                    />
+                  }
                 >
-                  <Placeholder hoot={hoot} />
+                  <Placeholder code={hoot.code} />
                 </ListItem>
               ))}
           </List>
