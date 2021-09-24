@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import { Container } from "@chakra-ui/react";
+import { Container, Box, Icon, VStack, Button } from "@chakra-ui/react";
 import { listTodos } from "../graphql/queries";
-import  PostForm  from "./PostForm";
-import  Card from "./Card";
+import PostForm from "./PostForm";
+import { Placeholder } from "./Placeholder";
+import { List } from "./List";
+import { ListItem } from "./ListItem";
+import { HamburgerIcon, TriangleUpIcon, TriangleDownIcon } from "@chakra-ui/icons";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
@@ -23,15 +26,53 @@ export default function Todo() {
   }
 
   return (
-    <Container maxW="container.md">
+    <Container maxW="container.lg">
       <PostForm newTodo={(newTodo) => setTodos([...todos, newTodo])}></PostForm>
-
-      {todos
-        .slice(0)
-        .reverse()
-        .map((todo, index) => (
-          <Card todo={todo} key={index}></Card>
-        ))}
+      <Box as="section">
+        <Box
+          maxW="2xl"
+          mx="auto"
+          p={{
+            base: "4",
+            md: "8",
+          }}
+        >
+          <List spacing="12">
+            {todos
+              .slice(0)
+              .reverse()
+              .map((todo, index) => (
+                <ListItem
+                  title={todo.name}
+                  subTitle="Posted by Mark Chandler"
+                  icon={<Icon as={HamburgerIcon} boxSize="6" />}
+                >
+                  <Placeholder todo={todo} key={index} />
+                  <VStack>
+                    <Button
+                      colorScheme="teal"
+                    >
+                      <TriangleUpIcon
+                        boxSize={3}
+                        color="red.450"
+                        style={{ marginRight: "2px" }}
+                      />
+                    </Button>
+                    <Button
+                      colorScheme="teal"
+                    >
+                      <TriangleDownIcon
+                        boxSize={3}
+                        color="red.450"
+                        style={{ marginTop: "2px" }}
+                      />
+                    </Button>
+                  </VStack>
+                </ListItem>
+              ))}
+          </List>
+        </Box>
+      </Box>
     </Container>
   );
 }
